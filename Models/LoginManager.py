@@ -7,7 +7,8 @@ sys.path.append('../Vue')
 sys.path.append('./')
 
 from Vue.DialogueBox import DialogueBox
-from Models.Class.User_management import User_Model, User_manager
+from Models.Class.User_management import User_Model
+from Models.Class.Product_management import Product_manager
 
 
 class LoginManager(DialogueBox):
@@ -39,13 +40,13 @@ class LoginManager(DialogueBox):
                         return False
 
     def authication_conf(self, username: str, password: str):
+        Product_manager().create_product()
         # Object testing
-        objet = {'nom': 'Technolab', 'prenom': 'ISTA', 'username': 'ISTA', 'email': 'technolabista1@gmail1.com',
-                 'tel': '89848495', 'password': 'bamako2023', 'profil_id': 1}
-        usert = User_manager()
-
-        print(usert.modify_user_password('almamyh27@gmail.com'))
-
+        # objet = {'nom': 'Technolab', 'prenom': 'ISTA', 'username': 'ISTA', 'email': 'technolabista1@gmail1.com',
+        #          'tel': '89848495', 'password': 'bamako2023', 'profil_id': 1}
+        # usert = User_manager()
+        #
+        # print(usert.modify_user_password('almamyh27@gmail.com'))
         # """
         # Cette fonction permet de verifier les critaires l'authantifications
         # :param username:
@@ -61,4 +62,4 @@ class LoginManager(DialogueBox):
         #         else:
         #             print("is caisseir")
         #             print(f'===!!! {user.email}, ===== {user.profile}')
-        pass
+        # pass

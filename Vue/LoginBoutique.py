@@ -49,7 +49,7 @@ class Ui_Form(LoginManager.LoginManager):
         self.label_4 = QtWidgets.QLabel(self.widget_2)
         self.label_4.setGeometry(QtCore.QRect(250, 50, 61, 61))
         self.label_4.setMinimumSize(QtCore.QSize(2, 0))
-        self.label_4.setStyleSheet("border-image: url(:/Images/Images/LG.png);\n" "")
+        self.label_4.setStyleSheet("border-image: url(:/Images/Images/LG.png);\n")
         self.label_4.setText("")
         self.label_4.setObjectName("label_4")
         self.connexion = QtWidgets.QPushButton(self.widget_2)
