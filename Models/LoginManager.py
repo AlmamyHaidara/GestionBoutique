@@ -40,7 +40,7 @@ class LoginManager(DialogueBox):
                         return False
 
     def authication_conf(self, username: str, password: str):
-        Product_manager().create_product()
+        Product_manager().delete_product()
         # Object testing
         # objet = {'nom': 'Technolab', 'prenom': 'ISTA', 'username': 'ISTA', 'email': 'technolabista1@gmail1.com',
         #          'tel': '89848495', 'password': 'bamako2023', 'profil_id': 1}
