@@ -69,7 +69,7 @@ class Product_manager():
             print("Successfully delete")
         pass
 
-    def search_user(self):
+    def search_produit(self):
         product_search = Produit.select().where(
             (Produit.nom_produit == (product['nom_produit'])) | (Produit.categorie == (product['categorie'])))
         for response in product_search:

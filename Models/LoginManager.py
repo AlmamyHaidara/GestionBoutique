@@ -8,7 +8,7 @@ sys.path.append('./')
 
 from Vue.DialogueBox import DialogueBox
 from Models.Class.User_management import User_Model
-from Models.Class.Product_management import Product_manager
+from Models.Class.Command_management import Command_manager
 
 
 class LoginManager(DialogueBox):
@@ -40,7 +40,36 @@ class LoginManager(DialogueBox):
                         return False
 
     def authication_conf(self, username: str, password: str):
-        Product_manager().delete_product()
+
+        data = {
+            "invoice_number": "INV-2023-001",
+            "invoice_date": "2023-04-16",
+            "customer_name": "John Doe",
+            "customer_address": "123 Main St, Anytown USA",
+            "invoice_items": [
+                {
+                    "name": "Produit 1",
+                    "quantity": 2,
+                    "unit_price": 10.99,
+                    "total": 21.98
+                },
+                {
+                    "name": "Produit 2",
+                    "quantity": 1,
+                    "unit_price": 5.50,
+                    "total": 5.50
+                },
+                {
+                    "name": "Produit 3",
+                    "quantity": 3,
+                    "unit_price": 8.75,
+                    "total": 26.25
+                }
+            ],
+            "total": 53.73
+        }
+        Command_manager.create_command(self)
+        # generate_invoice(data)
         # Object testing
         # objet = {'nom': 'Technolab', 'prenom': 'ISTA', 'username': 'ISTA', 'email': 'technolabista1@gmail1.com',
         #          'tel': '89848495', 'password': 'bamako2023', 'profil_id': 1}
