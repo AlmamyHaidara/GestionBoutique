@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import random
 import smtplib
 import sys
@@ -8,7 +8,7 @@ import bcrypt
 sys.path.append('../../Controler')
 from Controler.Data.Models import User_Model
 
-=======
+
 import profile
 import random
 import smtplib
@@ -20,33 +20,13 @@ import peewee
 sys.path.append('../../Controler')
 from Controler.Data.Models import User_Model
 from Controler.Data.Models import Profile_Model
->>>>>>> f3f9d25 (la version avec les interface utilisateur)
 
 class User_manager(object):
     def __init__(self):
         self.users = User_Model.User()
-<<<<<<< HEAD
         self.code_generat = ''
 
-    def create_user(self, user: dict):
-        print('Creating user', user)
-        if len(user) != 0:
-            user_info = self.users.select().where((User_Model.User.email == user['email']))
-            if not user_info:
-                salt = bcrypt.gensalt()  # Générer un salt aléatoire
-                hashed_password = bcrypt.hashpw(user['password'].encode('utf-8'), salt)  # Générer le hachage
-                User_Model.User(nom=user['nom'], prenom=user['prenom'], username=user['username'],
-                                email=user['email'],
-                                tel=user['tel'], password=hashed_password, profile=user['profil_id']).save()
-                print("Success")
-                return
-            else:
-                print(user_info)
-                print('User existed')
-                return False
-=======
-        self.profil = Profile_Model.Profile()
-        self.code_generat = ''
+
 
     def create_user(self, us:dict):
         print('Creating user', us)
@@ -82,12 +62,10 @@ class User_manager(object):
         else:
             print('User email is invalid')
             return False
->>>>>>> f3f9d25 (la version avec les interface utilisateur)
         pass
 
     def update_user(self, user: dict):
         if len(user) != 0:
-<<<<<<< HEAD
             user_email = self.users.select().where((User_Model.User.email == user['email']))
             if not user_email:
                 print('User does not exist')
@@ -104,16 +82,7 @@ class User_manager(object):
                 return
         pass
 
-    def delete_user(self, user: dict):
-        user_email = self.users.select().where((User_Model.User.email == (user['email'])))
-        for i in user_email:
-            id = i.id
-            print(f"==> id: {id}")
-        self.users.delete().where(
-            User_Model.User.id == id).execute()
-        print('Successfully delete')
-        return
-        pass
+
 
     def search_user(self, user: dict):
         user_search = self.users.select().where(
@@ -122,37 +91,36 @@ class User_manager(object):
             return response
         pass
 
-    def modify_user_password(self, email: str):
-        code = self.code_generator(email)
-        if code == self.code_generator:
-            print("Code validate")
-            return True
-        else:
-            print("code incorrect")
-            return False
-        pass
-
-=======
-            if self.regex_mail(user['email']):
-                user_email = User_Model.User().select().where((User_Model.User.email == user['email']))
-                if not user_email:
-                    print('User does not exist')
-                    return False
-                else:
-                    profil = Profile_Model.Profile().get(nom_profile = user['profil'])
-                    print('Profile: ', profil)
-                    for i in user_email:
-                        id = i.id
-                        print(f"==> id: {id}")
-                    User_Model.User().update(nom=user['nom'], prenom=user['prenom'], username=user['username'],
-                                      email=user['email'],
-                                      tel=user['tel'], profile = profil).where(
-                        User_Model.User.id == id).execute()
-                    print('Successfully update')
-                    return
-        else:
-            return False
-        pass
+    # def modify_user_password(self, email: str):
+    #     code = self.code_generator(email)
+    #     if code == self.code_generator:
+    #         print("Code validate")
+    #         return True
+    #     else:
+    #         print("code incorrect")
+    #         return False
+    #     pass
+    #
+    #     if self.regex_mail(user['email']):
+    #             user_email = User_Model.User().select().where((User_Model.User.email == user['email']))
+    #             if not user_email:
+    #                 print('User does not exist')
+    #                 return False
+    #             else:
+    #                 profil = Profile_Model.Profile().get(nom_profile = user['profil'])
+    #                 print('Profile: ', profil)
+    #                 for i in user_email:
+    #                     id = i.id
+    #                     print(f"==> id: {id}")
+    #                 User_Model.User().update(nom=user['nom'], prenom=user['prenom'], username=user['username'],
+    #                                   email=user['email'],
+    #                                   tel=user['tel'], profile = profil).where(
+    #                     User_Model.User.id == id).execute()
+    #                 print('Successfully update')
+    #                 return
+    #     else:
+    #         return False
+    #     pass
 
     def delete_user(self, email: str):
         user_email = self.users.get(email = email)
@@ -225,7 +193,6 @@ class User_manager(object):
         return chunks
 
         pass
->>>>>>> f3f9d25 (la version avec les interface utilisateur)
     def code_generator(self, email: str):
         emails = self.users.select().where(User_Model.User.email == email).execute()
         if not emails:

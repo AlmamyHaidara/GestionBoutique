@@ -16,39 +16,30 @@ class Product_manager():
         if not product:
             return False
         else:
-            try:
-                prod = Produit.get(nom_produit=product['nom_produit'])
-                this.quantier = Quantiter.get(quantiter=product['quantier'])
-            except Quantiter.DoesNotExist:
-                print("La quantiter nexiste pas dans la base de donner!")
-                Quantiter.create(quantiter=product['quantier']).save()
-                this.quantier = Quantiter.get(quantiter=product['quantier'])
-            except Produit.DoesNotExist:
-                Quantiter.create(quantiter=product['quantier']).save()
-                this.quantier = Quantiter.get(quantiter=product['quantier'])
-                print("La quantiter n'existe pas dans la base de donner")
-                print("==>> ", this.quantier)
-                product_list = Produit.create(nom_produit=product['nom_produit'], prix_produit=product['prix'],
-                                              categorie=product['categorie'],
-                                              quantiter=this.quantier).save()
-                this.quantiter = Quantiter.get(quantiter=product['quantiter'])
-            except Quantiter.DoesNotExist:
-                print("La quantiter nexiste pas dans la base de donner!")
-                Quantiter.create(quantiter=product['quantiter']).save()
-                this.quantiter = Quantiter.get(quantiter=product['quantiter'])
-            except Produit.DoesNotExist:
-                Quantiter.create(quantiter=product['quantiter']).save()
-                this.quantiter = Quantiter.get(quantiter=product['quantiter'])
-                print("La quantiter n'existe pas dans la base de donner")
-                print("==>> ", this.quantiter)
-                montant_product = float(this.quantiter) * float(product['prix'])
-                product_list = Produit.create(nom_produit=product['nom_produit'],categorie=product['categorie'], quantiter=this.quantiter,prix_produit=product['prix'],etat=product['etat'],montant = montant_product).save()
-                print('Succesfully')
-                pass
-            else:
-                print("La quantiter ou le produit Le produit existe deja dans la base de donner!")
-                print("L'objet existe et peut être utilisé.")
+            if(product['nom_produit'] == '' or product['prix'] == '' or product['quantiter'] == '' or product['nom_produit'] == ' ' or product['prix'] == ' ' or product['quantiter'] == ' ' ):
+                print('Veuillez remplire correctement des differente champs')
                 return False
+            else:
+                try:
+                    prod = Produit.get(nom_produit=product['nom_produit'])
+                    this.quantiter = Quantiter.get(quantiter=product['quantiter'])
+                except Quantiter.DoesNotExist:
+                    print("La quantiter nexiste pas dans la base de donner!")
+                    Quantiter.create(quantiter=product['quantiter']).save()
+                    this.quantiter = Quantiter.get(quantiter=product['quantiter'])
+                except Produit.DoesNotExist:
+                    Quantiter.create(quantiter=product['quantiter']).save()
+                    this.quantiter = Quantiter.get(quantiter=product['quantiter'])
+                    print("La quantiter n'existe pas dans la base de donner")
+                    print("==>> ", float(str(this.quantiter)))
+                    montant_product = float(str(this.quantiter)) * float(product['prix'])
+                    product_list = Produit.create(nom_produit=product['nom_produit'],categorie=product['categorie'], quantiter=this.quantiter,prix_produit=product['prix'],etat=product['etat'],montant = montant_product).save()
+                    print('Succesfully')
+                    pass
+                else:
+                    print("La quantiter ou le produit Le produit existe deja dans la base de donner!")
+                    print("L'objet existe et peut être utilisé.")
+                    return False
 
     @classmethod
     def update_product(this,product:dict):
@@ -60,8 +51,8 @@ class Product_manager():
             return False
         except Quantiter.DoesNotExist:
             print("La quantiter nexiste pas dans la base de donner!")
-            Quantiter.create(quantiter=product['quantier']).save()
-            this.quantier = Quantiter.get(quantiter=product['quantier'])
+            Quantiter.create(quantiter=product['quantiter']).save()
+            this.quantiter = Quantiter.get(quantiter=product['quantiter'])
         else:
             Produit.update(nom_produit=product['nom_produit'], prix_produit=product['prix'],
                            categorie=product['categorie'],
@@ -77,8 +68,9 @@ class Product_manager():
             return False
             pass
         else:
-            Produit.delete().where(Produit.nom_produit == 'Nike').execute()
+            Produit.delete().where(Produit.nom_produit == prod).execute()
             print("Successfully delete")
+            return True
         pass
 
     def search_produit(self):

@@ -352,7 +352,7 @@ class Ui_UI_Product(Product_management.Product_manager,DialogueBox):
             'nom_produit': self.product_field.text(),
             'categorie': self.categorie_combo.currentText(),
             'prix': self.prix_field.text(),
-            'quantier': self.quantiter_field.text(),
+            'quantiter': self.quantiter_field.text(),
             'etat': self.eta_combo.currentText(),
         }))
 
