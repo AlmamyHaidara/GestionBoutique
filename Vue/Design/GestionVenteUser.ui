@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AjouterVente</class>
+ <widget class="QMainWindow" name="AjouterVente">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1250</width>
+    <height>755</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>-1</x>
+      <y>-1</y>
+      <width>1281</width>
+      <height>801</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255,228,54)</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QFrame" name="frame_haut">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>1271</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border:none</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QPushButton" name="pushButton">
+      <property name="geometry">
+       <rect>
+        <x>1120</x>
+        <y>0</y>
+        <width>113</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../fermerIcon-removebg-preview.png</normaloff>../fermerIcon-removebg-preview.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>60</width>
+        <height>80</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_2">
+      <property name="geometry">
+       <rect>
+        <x>1010</x>
+        <y>0</y>
+        <width>113</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../pngtree-fullscreen--icon-in-trendy-style-isolated-background-png-image_1566064-removebg-preview.png</normaloff>../pngtree-fullscreen--icon-in-trendy-style-isolated-background-png-image_1566064-removebg-preview.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>60</width>
+        <height>80</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_3">
+      <property name="geometry">
+       <rect>
+        <x>880</x>
+        <y>0</y>
+        <width>113</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../red-removebg-preview.png</normaloff>../red-removebg-preview.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>60</width>
+        <height>80</height>
+       </size>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QFrame" name="frame_3">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>90</y>
+       <width>991</width>
+       <height>651</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:rgba(0,0,0,0.2);
+border-radius:20px;
+</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QPushButton" name="pushButton_11">
+      <property name="geometry">
+       <rect>
+        <x>420</x>
+        <y>480</y>
+        <width>181</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+background-color:#FFE436;
+border-top-left-radius:20px;
+border-bottom-left-radius:20px;
+color:rgb(255,255,255);
+font:77 21pt &quot;metropolis&quot;;
+border-radius:15px
+
+
+}
+QPushButton:hover{
+background-color:white;
+border-radius:15px;
+color:rgb(0,0,0);
+font:77 18pt &quot;metropolis&quot;;
+
+
+}
+</string>
+      </property>
+      <property name="text">
+       <string>Enregistrer</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_12">
+      <property name="geometry">
+       <rect>
+        <x>340</x>
+        <y>130</y>
+        <width>361</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:none;
+border:none;
+font:90 30pt &quot;metropolis&quot;;
+font-size:30px;
+color:white</string>
+      </property>
+      <property name="text">
+       <string>AJOUTER UNE VENTE</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_19">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>310</y>
+        <width>361</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius:15px;
+color:black;
+background-color:rgba(255,255,255,0.8)
+
+</string>
+      </property>
+      <property name="placeholderText">
+       <string>Quantité</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_18">
+      <property name="geometry">
+       <rect>
+        <x>520</x>
+        <y>230</y>
+        <width>171</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius:15px;
+color:black;
+background-color:rgba(255,255,255,0.8)
+
+</string>
+      </property>
+      <property name="placeholderText">
+       <string>Nom_produit</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_17">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>230</y>
+        <width>171</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius:15px;
+color:black;
+background-color:rgba(255,255,255,0.8)
+
+</string>
+      </property>
+      <property name="placeholderText">
+       <string>num_vente</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_20">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>380</y>
+        <width>361</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius:15px;
+color:black;
+background-color:rgba(255,255,255,0.8)
+
+</string>
+      </property>
+      <property name="placeholderText">
+       <string>Montant</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QPushButton" name="pushButton_20">
+     <property name="geometry">
+      <rect>
+       <x>-20</x>
+       <y>750</y>
+       <width>181</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:white;
+color:black;
+border-radius:25px;
+font:90 18pt &quot;metropolis&quot;;</string>
+     </property>
+     <property name="text">
+      <string>Retour</string>
+     </property>
+    </widget>
+    <widget class="QWidget" name="widget_9" native="true">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>221</width>
+       <height>80</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:white;
+border:none;
+border-radius:15px
+</string>
+     </property>
+     <widget class="QLabel" name="label_32">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>20</y>
+        <width>101</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border:none;
+font:90 18pt &quot;metropolis&quot;;
+color:black</string>
+      </property>
+      <property name="text">
+       <string>Connecté</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_12">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>0</y>
+        <width>111</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+background-color:none;
+border-top-left-radius:20px;
+border-bottom-left-radius:20px;
+color:rgb(0,0,0);
+font:77 10pt &quot;metropolis&quot;;
+font-size:14px;
+
+}
+QPushButton:hover{
+background-color:white;
+border-top-left-radius:20px;
+border-bottom-left-radius:20px;
+color:rgb(0,0,0);
+font:77 10pt &quot;metropolis&quot;;
+font-size:13px;
+
+}
+
+
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../compte-removebg-preview.png</normaloff>../compte-removebg-preview.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>120</width>
+        <height>110</height>
+       </size>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../ressource.qrc"/>
+ </resources>
+ <connections/>
+</ui>
