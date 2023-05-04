@@ -12,27 +12,27 @@ sys.path.append('./Vue')
 # from Custom_Widgets.components.python.ui_interface import Ui_MainWindow
 
 
-<<<<<<< HEAD
+ 
 from Vue.LoginBoutique import *
-=======
+  
 from Vue import Login_UI
->>>>>>> f3f9d25 (la version avec les interface utilisateur)
+   
 
 
 class MainWindow(QMainWindow):
     def __init__(self, parent=None):
         QMainWindow.__init__(self)
-<<<<<<< HEAD
+ 
         self.ui = Vue.LoginBoutique.Ui_Form()
         self.ui.setupUi(self)
         self.center()  # centre la fenêtre
         self.show()
-=======
+  
         self.ui = Login_UI.Ui_file1()
         self.ui.setupUi(self)
         self.center()  # centre la fenêtre
         # self.show()
->>>>>>> f3f9d25 (la version avec les interface utilisateur)
+   
 
     def center(self):
         # récupère la taille de l'écran
@@ -45,11 +45,11 @@ class MainWindow(QMainWindow):
         # définit les nouvelles coordonnées pour la fenêtre
         self.move(int(x), int(y))
 
-<<<<<<< HEAD
-=======
+ 
+  
     def winClose(self):
         self.close()
->>>>>>> f3f9d25 (la version avec les interface utilisateur)
+   
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

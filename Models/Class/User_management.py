@@ -66,7 +66,8 @@ class User_manager(object):
 
     def update_user(self, user: dict):
         if len(user) != 0:
-            user_email = self.users.select().where((User_Model.User.email == user['email']))
+            user_email = User_Model.User().select().where((User_Model.User.email == user['email']))
+            id_profil = Profile_Model.Profile().select().where((Profile_Model.Profile.nom_profile == user['profil']))
             if not user_email:
                 print('User does not exist')
                 return False
@@ -74,9 +75,9 @@ class User_manager(object):
                 for i in user_email:
                     id = i.id
                     print(f"==> id: {id}")
-                self.users.update(nom=user['nom'], prenom=user['prenom'], username=user['username'],
+                User_Model.User().update(nom=user['nom'], prenom=user['prenom'], username=user['username'],
                                   email=user['email'],
-                                  tel=user['tel'], password=user['password'], profile=user['profil_id']).where(
+                                  tel=user['tel'], profile=id_profil).where(
                     User_Model.User.id == id).execute()
                 print('Successfully update')
                 return
