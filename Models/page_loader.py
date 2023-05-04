@@ -11,6 +11,7 @@ from PyQt5.QtWidgets import QMainWindow, QDesktopWidget
 from Vue.Acceuile_cassier import Ui_PageAccueil
 from Vue.Acceuile_gerant import Ui_PageAccueil_Gerant,test
 from Vue.manage_users import Ui_AjouterCompte
+from Vue.Cestion_Command import ui_command
 from Vue.GestionProduitAdmin import ui_user
 from Vue.Login_UI import *
 from main import MainWindow
@@ -54,6 +55,12 @@ class Loader(QMainWindow):
         self.box = Ui_Dialog()
         self.box.setupUi(self.dialogue)
         self.dialogue.show()
+
+    def GestionCommands(self):
+        self.ui = ui_command()
+        self.ui.center()
+
+        self.ui.show()
 
     # def ListVenteUser(self):
     #     self.window2 = QtWidgets.QMainWindow()

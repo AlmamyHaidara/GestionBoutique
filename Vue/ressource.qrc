@@ -288,12 +288,7 @@
     <file>feather/zoom-in.svg</file>
     <file>feather/zoom-out.svg</file>
   </qresource>
-<<<<<<< HEAD
-  <qresource prefix="Images">
-    <file>Images/just.png</file>
-    <file>Images/LG.png</file>
-    <file>Images/log.png</file>
-=======
+
   <qresource prefix="images">
     <file>images/list_user.png</file>
     <file>images/user_update.png</file>
@@ -342,6 +337,5 @@
     <file>images/produit-removebg-preview.png</file>
     <file>images/stock-removebg-preview.png</file>
     <file>images/vente-removebg-preview.png</file>
->>>>>>> f3f9d25 (la version avec les interface utilisateur)
   </qresource>
 </RCC>
