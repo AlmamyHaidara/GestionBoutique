@@ -15,6 +15,7 @@ sys.path.append('../Models/')
 from PyQt5 import QtCore, QtGui, QtWidgets
 from Models import page_loader
 
+
 class Ui_PageAccueil_Gerant():
 
 
@@ -442,6 +443,7 @@ class Ui_PageAccueil_Gerant():
         self.vente_btn.setText(_translate("PageAccueil", "Gestion des ventes"))
         self.acceuille_btn.setText(_translate("PageAccueil", "Accueil"))
         self.commande_btn.setText(_translate("PageAccueil", "Enregistrer une commande"))
+        self.commande_btn.clicked.connect(lambda :page_loader.Loader.GestionCommands(self))
         self.facture_btn.setText(_translate("PageAccueil", "Generer une facture"))
         self.label_32.setText(_translate("PageAccueil", "Connecter"))
         self.label_6.setText(_translate("PageAccueil", "Nombre de commande"))

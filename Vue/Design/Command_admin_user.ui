@@ -39,7 +39,7 @@
 border-radius:20px;</string>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="ajout_command">
      <widget class="QPushButton" name="add_command">
@@ -78,7 +78,7 @@ font-weight: bold;
        <string>Ajouer Command</string>
       </property>
       <property name="icon">
-       <iconset resource="../ressource.qrc">
+       <iconset>
         <normaloff>:/images/images/ajouter_ventes-removebg-preview.png</normaloff>:/images/images/ajouter_ventes-removebg-preview.png</iconset>
       </property>
       <property name="iconSize">
@@ -122,7 +122,7 @@ font-weight:  bold;
        <string>Liste Command</string>
       </property>
       <property name="icon">
-       <iconset resource="../ressource.qrc">
+       <iconset>
         <normaloff>:/images/images/commandes-removebg-preview .png</normaloff>:/images/images/commandes-removebg-preview .png</iconset>
       </property>
       <property name="iconSize">
@@ -541,7 +541,7 @@ font-weight: bold;
        <string>Liste Command</string>
       </property>
       <property name="icon">
-       <iconset resource="../ressource.qrc">
+       <iconset>
         <normaloff>:/images/images/commandes-removebg-preview .png</normaloff>:/images/images/commandes-removebg-preview .png</iconset>
       </property>
       <property name="iconSize">
@@ -584,7 +584,7 @@ font-weight:  bold;
        <string>Ajouer Command</string>
       </property>
       <property name="icon">
-       <iconset resource="../ressource.qrc">
+       <iconset>
         <normaloff>:/images/images/ajouter_ventes-removebg-preview.png</normaloff>:/images/images/ajouter_ventes-removebg-preview.png</iconset>
       </property>
       <property name="iconSize">
@@ -882,7 +882,7 @@ font-size:13px;
       <string/>
      </property>
      <property name="icon">
-      <iconset resource="../ressource.qrc">
+      <iconset>
        <normaloff>:/images/images/compte-removebg-preview.png</normaloff>:/images/images/compte-removebg-preview.png</iconset>
      </property>
      <property name="iconSize">

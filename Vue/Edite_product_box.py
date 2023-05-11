@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file './Command_admin_user.ui'
+# Form implementation generated from reading ui file './Vue/Design/EditeProductBox.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.9
 #
@@ -9,497 +9,153 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from Models.Class import Product_management
 
 
-class Ui_Form(object):
-    def setupUi(self, Form):
-        Form.setObjectName("Form")
-        Form.resize(1314, 799)
-        self.widget = QtWidgets.QWidget(Form)
-        self.widget.setGeometry(QtCore.QRect(0, 0, 1351, 801))
-        self.widget.setStyleSheet("background-color: rgb(255,228,54)")
-        self.widget.setObjectName("widget")
-        self.command_stacke = QtWidgets.QStackedWidget(self.widget)
-        self.command_stacke.setGeometry(QtCore.QRect(50, 140, 1221, 561))
-        self.command_stacke.setStyleSheet("background-color:rgba(0,0,0,0.2);\n"
-"border-radius:20px;")
-        self.command_stacke.setObjectName("command_stacke")
-        self.ajout_command = QtWidgets.QWidget()
-        self.ajout_command.setObjectName("ajout_command")
-        self.add_command = QtWidgets.QPushButton(self.ajout_command)
-        self.add_command.setGeometry(QtCore.QRect(110, 30, 221, 61))
-        self.add_command.setStyleSheet("QPushButton{\n"
-"background-color:#fff;\n"
-"border-radius:5px;\n"
-"color:rgb(0,0,0);\n"
-"font-weight:  bold;\n"
-"font:77 10pt \"metropolis\";\n"
-"font-size:14px;\n"
-"\n"
-"}\n"
-"QPushButton:hover{\n"
-"background-color:rgba(0,0,0,0.2);\n"
-"border-tradius:5px;\n"
-"color:rgb(255,255,255);\n"
-"font:77 10pt \"metropolis\";\n"
-"font-size:14px;\n"
-"font-weight: bold;\n"
-"\n"
-"}\n"
-"\n"
-"\n"
+class Ui_Dialog_Product(Product_management.Product_manager):
+    def __init__(self,data):
+        self.data = data
+        print("Writing: {}".format(data))
+        print("Size: {}".format(len(self.data)))
+
+    def setupUi(self, Dialog):
+        Dialog.setObjectName("Dialog")
+        Dialog.resize(648, 649)
+        self.frame = QtWidgets.QFrame(Dialog)
+        self.frame.setGeometry(QtCore.QRect(-10, 0, 661, 651))
+        self.frame.setStyleSheet("background-color: rgb(255,228,54)")
+        self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame.setObjectName("frame")
+        self.frame_3 = QtWidgets.QFrame(self.frame)
+        self.frame_3.setGeometry(QtCore.QRect(50, 70, 571, 501))
+        self.frame_3.setStyleSheet("background-color:rgba(0,0,0,0.2);\n"
+"border-radius:20px;\n"
 "")
-        icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(":/Images/images/ajouter_ventes-removebg-preview.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.add_command.setIcon(icon)
-        self.add_command.setIconSize(QtCore.QSize(50, 50))
-        self.add_command.setObjectName("add_command")
-        self.list_command_add = QtWidgets.QPushButton(self.ajout_command)
-        self.list_command_add.setGeometry(QtCore.QRect(830, 30, 221, 71))
-        self.list_command_add.setStyleSheet("QPushButton{\n"
-"background-color:none;\n"
-"border-radius:5px;\n"
-"color:rgb(0,0,0);\n"
-"font:77 10pt \"metropolis\";\n"
-"font-size:14px;\n"
+        self.frame_3.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_3.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_3.setObjectName("frame_3")
+        self.update = QtWidgets.QPushButton(self.frame_3)
+        self.update.setGeometry(QtCore.QRect(190, 420, 181, 32))
+        self.update.setStyleSheet("QPushButton{\n"
+"background-color:#FFE436;\n"
+"border-top-left-radius:20px;\n"
+"border-bottom-left-radius:20px;\n"
+"color:rgb(255,255,255);\n"
+"font:77 21pt \"metropolis\";\n"
+"border-radius:15px\n"
+"\n"
 "\n"
 "}\n"
 "QPushButton:hover{\n"
 "background-color:white;\n"
-"border-radius:5px;\n"
+"border-radius:15px;\n"
 "color:rgb(0,0,0);\n"
-"font:77 10pt \"metropolis\";\n"
-"font-size:14px;\n"
+"font:77 18pt \"metropolis\";\n"
+"\n"
+"\n"
 "}\n"
-"\n"
 "")
-        icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap(":/Images/images/commandes-removebg-preview .png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.list_command_add.setIcon(icon1)
-        self.list_command_add.setIconSize(QtCore.QSize(60, 70))
-        self.list_command_add.setObjectName("list_command_add")
-        self.label = QtWidgets.QLabel(self.ajout_command)
-        self.label.setGeometry(QtCore.QRect(110, 170, 231, 31))
-        font = QtGui.QFont()
-        font.setPointSize(14)
-        self.label.setFont(font)
-        self.label.setStyleSheet("color:#fff;\n"
-"background: transparent;")
-        self.label.setObjectName("label")
-        self.categorie_combo = QtWidgets.QComboBox(self.ajout_command)
-        self.categorie_combo.setGeometry(QtCore.QRect(100, 290, 251, 41))
-        self.categorie_combo.setStyleSheet("border-radius:5px;\n"
+        self.update.setObjectName("update")
+        self.label_14 = QtWidgets.QLabel(self.frame_3)
+        self.label_14.setGeometry(QtCore.QRect(120, 20, 371, 41))
+        self.label_14.setStyleSheet("background-color:none;\n"
+"border:none;\n"
+"font:90 30pt \"metropolis\";\n"
+"font-size:30px;\n"
+"color:white")
+        self.label_14.setObjectName("label_14")
+        self.montant_field = QtWidgets.QLineEdit(self.frame_3)
+        self.montant_field.setGeometry(QtCore.QRect(80, 280, 411, 41))
+        self.montant_field.setStyleSheet("border-radius:15px;\n"
 "color:black;\n"
 "background-color:rgba(255,255,255,0.8)\n"
 "\n"
 "")
-        self.categorie_combo.setObjectName("categorie_combo")
-        self.categorie_combo.addItem("")
-        self.prix_field = QtWidgets.QLineEdit(self.ajout_command)
-        self.prix_field.setGeometry(QtCore.QRect(100, 340, 251, 41))
-        self.prix_field.setStyleSheet("border-radius:5px;\n"
-"color:black;\n"
-"background-color:rgba(255,255,255,0.8)\n"
-"\n"
-"")
-        self.prix_field.setObjectName("prix_field")
-        self.product_field = QtWidgets.QLineEdit(self.ajout_command)
-        self.product_field.setGeometry(QtCore.QRect(100, 230, 251, 41))
-        self.product_field.setStyleSheet("border-radius:5px;\n"
-"color:black;\n"
-"background-color:rgba(255,255,255,0.8)\n"
-"\n"
-"")
-        self.product_field.setObjectName("product_field")
-        self.quantiter_field = QtWidgets.QLineEdit(self.ajout_command)
-        self.quantiter_field.setGeometry(QtCore.QRect(100, 400, 251, 41))
-        self.quantiter_field.setStyleSheet("border-radius:5px;\n"
+        self.montant_field.setObjectName("montant_field")
+        self.quantiter_field = QtWidgets.QLineEdit(self.frame_3)
+        self.quantiter_field.setGeometry(QtCore.QRect(290, 210, 201, 41))
+        self.quantiter_field.setStyleSheet("border-radius:15px;\n"
 "color:black;\n"
 "background-color:rgba(255,255,255,0.8)\n"
 "\n"
 "")
         self.quantiter_field.setObjectName("quantiter_field")
-        self.add_panier = QtWidgets.QPushButton(self.ajout_command)
-        self.add_panier.setGeometry(QtCore.QRect(120, 480, 211, 32))
-        font = QtGui.QFont()
-        font.setFamily("metropolis")
-        font.setPointSize(15)
-        font.setBold(True)
-        font.setItalic(False)
-        font.setWeight(75)
-        self.add_panier.setFont(font)
-        self.add_panier.setStyleSheet("QPushButton{\n"
-"background-color:#FFE436;\n"
-"border-top-left-radius:20px;\n"
-"border-bottom-left-radius:20px;\n"
-"color:rgb(255,255,255);\n"
-"font:77 15pt \"metropolis\";\n"
-"border-radius:5px;\n"
-"font-weight:bold;\n"
-"\n"
-"\n"
-"}\n"
-"QPushButton:hover{\n"
-"background-color:white;\n"
-"border-radius:5px;\n"
-"color:rgb(0,0,0);\n"
-"font:77 15pt \"metropolis\";\n"
-"\n"
-"font-weight:bold;\n"
-"}\n"
-"")
-        self.add_panier.setObjectName("add_panier")
-        self.command_table = QtWidgets.QTableWidget(self.ajout_command)
-        self.command_table.setGeometry(QtCore.QRect(390, 230, 801, 231))
-        self.command_table.setObjectName("command_table")
-        self.command_table.setColumnCount(8)
-        self.command_table.setRowCount(0)
-        item = QtWidgets.QTableWidgetItem()
-        font = QtGui.QFont()
-        font.setBold(True)
-        font.setWeight(75)
-        item.setFont(font)
-        item.setBackground(QtGui.QColor(255, 255, 255))
-        self.command_table.setHorizontalHeaderItem(0, item)
-        item = QtWidgets.QTableWidgetItem()
-        font = QtGui.QFont()
-        font.setBold(True)
-        font.setWeight(75)
-        item.setFont(font)
-        item.setBackground(QtGui.QColor(255, 255, 255))
-        self.command_table.setHorizontalHeaderItem(1, item)
-        item = QtWidgets.QTableWidgetItem()
-        font = QtGui.QFont()
-        font.setBold(True)
-        font.setWeight(75)
-        item.setFont(font)
-        item.setBackground(QtGui.QColor(255, 255, 255))
-        self.command_table.setHorizontalHeaderItem(2, item)
-        item = QtWidgets.QTableWidgetItem()
-        font = QtGui.QFont()
-        font.setBold(True)
-        font.setWeight(75)
-        item.setFont(font)
-        item.setBackground(QtGui.QColor(255, 255, 255))
-        self.command_table.setHorizontalHeaderItem(3, item)
-        item = QtWidgets.QTableWidgetItem()
-        font = QtGui.QFont()
-        font.setBold(True)
-        font.setWeight(75)
-        item.setFont(font)
-        item.setBackground(QtGui.QColor(255, 255, 255))
-        self.command_table.setHorizontalHeaderItem(4, item)
-        item = QtWidgets.QTableWidgetItem()
-        font = QtGui.QFont()
-        font.setBold(True)
-        font.setWeight(75)
-        item.setFont(font)
-        item.setBackground(QtGui.QColor(255, 255, 255))
-        self.command_table.setHorizontalHeaderItem(5, item)
-        item = QtWidgets.QTableWidgetItem()
-        font = QtGui.QFont()
-        font.setBold(True)
-        font.setWeight(75)
-        item.setFont(font)
-        item.setBackground(QtGui.QColor(255, 255, 255))
-        self.command_table.setHorizontalHeaderItem(6, item)
-        item = QtWidgets.QTableWidgetItem()
-        font = QtGui.QFont()
-        font.setBold(True)
-        font.setWeight(75)
-        item.setFont(font)
-        item.setBackground(QtGui.QColor(255, 255, 255))
-        self.command_table.setHorizontalHeaderItem(7, item)
-        self.label_2 = QtWidgets.QLabel(self.ajout_command)
-        self.label_2.setGeometry(QtCore.QRect(670, 160, 231, 31))
-        font = QtGui.QFont()
-        font.setPointSize(14)
-        self.label_2.setFont(font)
-        self.label_2.setStyleSheet("color:#fff;\n"
-"background: transparent;")
-        self.label_2.setObjectName("label_2")
-        self.valider = QtWidgets.QPushButton(self.ajout_command)
-        self.valider.setGeometry(QtCore.QRect(970, 480, 211, 32))
-        font = QtGui.QFont()
-        font.setFamily("metropolis")
-        font.setPointSize(15)
-        font.setBold(True)
-        font.setItalic(False)
-        font.setWeight(75)
-        self.valider.setFont(font)
-        self.valider.setStyleSheet("QPushButton{\n"
-"background-color:#FFE436;\n"
-"border-top-left-radius:20px;\n"
-"border-bottom-left-radius:20px;\n"
-"color:rgb(255,255,255);\n"
-"font:77 15pt \"metropolis\";\n"
-"border-radius:5px;\n"
-"font-weight:bold;\n"
-"\n"
-"\n"
-"}\n"
-"QPushButton:hover{\n"
-"background-color:white;\n"
-"border-radius:5px;\n"
-"color:rgb(0,0,0);\n"
-"font:77 15pt \"metropolis\";\n"
-"\n"
-"font-weight:bold;\n"
-"}\n"
-"")
-        self.valider.setObjectName("valider")
-        self.command_stacke.addWidget(self.ajout_command)
-        self.list_command = QtWidgets.QWidget()
-        self.list_command.setObjectName("list_command")
-        self.list_command_list = QtWidgets.QPushButton(self.list_command)
-        self.list_command_list.setGeometry(QtCore.QRect(740, 30, 221, 71))
-        self.list_command_list.setStyleSheet("QPushButton{\n"
-"background-color:#fff;\n"
-"border-radius:5px;\n"
-"color:rgb(0,0,0);\n"
-"font-weight:  bold;\n"
-"font:77 10pt \"metropolis\";\n"
-"font-size:14px;\n"
-"\n"
-"}\n"
-"QPushButton:hover{\n"
-"background-color:rgba(0,0,0,0.2);\n"
-"border-tradius:5px;\n"
-"color:rgb(255,255,255);\n"
-"font:77 10pt \"metropolis\";\n"
-"font-size:14px;\n"
-"font-weight: bold;\n"
-"\n"
-"}")
-        self.list_command_list.setIcon(icon1)
-        self.list_command_list.setIconSize(QtCore.QSize(60, 70))
-        self.list_command_list.setObjectName("list_command_list")
-        self.add_command_list = QtWidgets.QPushButton(self.list_command)
-        self.add_command_list.setGeometry(QtCore.QRect(170, 30, 221, 61))
-        self.add_command_list.setStyleSheet("QPushButton{\n"
-"background-color:none;\n"
-"border-radius:5px;\n"
-"color:rgb(0,0,0);\n"
-"font:77 10pt \"metropolis\";\n"
-"font-size:14px;\n"
-"\n"
-"}\n"
-"QPushButton:hover{\n"
-"background-color:white;\n"
-"border-radius:5px;\n"
-"color:rgb(0,0,0);\n"
-"font:77 10pt \"metropolis\";\n"
-"font-size:14px;\n"
-"}\n"
-"\n"
-"")
-        self.add_command_list.setIcon(icon)
-        self.add_command_list.setIconSize(QtCore.QSize(50, 50))
-        self.add_command_list.setObjectName("add_command_list")
-        self.tableauListcommand = QtWidgets.QTableWidget(self.list_command)
-        self.tableauListcommand.setGeometry(QtCore.QRect(190, 200, 801, 331))
-        self.tableauListcommand.setObjectName("tableauListcommand")
-        self.tableauListcommand.setColumnCount(8)
-        self.tableauListcommand.setRowCount(0)
-        item = QtWidgets.QTableWidgetItem()
-        font = QtGui.QFont()
-        font.setBold(True)
-        font.setWeight(75)
-        item.setFont(font)
-        item.setBackground(QtGui.QColor(255, 255, 255))
-        self.tableauListcommand.setHorizontalHeaderItem(0, item)
-        item = QtWidgets.QTableWidgetItem()
-        font = QtGui.QFont()
-        font.setBold(True)
-        font.setWeight(75)
-        item.setFont(font)
-        item.setBackground(QtGui.QColor(255, 255, 255))
-        self.tableauListcommand.setHorizontalHeaderItem(1, item)
-        item = QtWidgets.QTableWidgetItem()
-        font = QtGui.QFont()
-        font.setBold(True)
-        font.setWeight(75)
-        item.setFont(font)
-        item.setBackground(QtGui.QColor(255, 255, 255))
-        self.tableauListcommand.setHorizontalHeaderItem(2, item)
-        item = QtWidgets.QTableWidgetItem()
-        font = QtGui.QFont()
-        font.setBold(True)
-        font.setWeight(75)
-        item.setFont(font)
-        item.setBackground(QtGui.QColor(255, 255, 255))
-        self.tableauListcommand.setHorizontalHeaderItem(3, item)
-        item = QtWidgets.QTableWidgetItem()
-        font = QtGui.QFont()
-        font.setBold(True)
-        font.setWeight(75)
-        item.setFont(font)
-        item.setBackground(QtGui.QColor(255, 255, 255))
-        self.tableauListcommand.setHorizontalHeaderItem(4, item)
-        item = QtWidgets.QTableWidgetItem()
-        font = QtGui.QFont()
-        font.setBold(True)
-        font.setWeight(75)
-        item.setFont(font)
-        item.setBackground(QtGui.QColor(255, 255, 255))
-        self.tableauListcommand.setHorizontalHeaderItem(5, item)
-        item = QtWidgets.QTableWidgetItem()
-        font = QtGui.QFont()
-        font.setBold(True)
-        font.setWeight(75)
-        item.setFont(font)
-        item.setBackground(QtGui.QColor(255, 255, 255))
-        self.tableauListcommand.setHorizontalHeaderItem(6, item)
-        item = QtWidgets.QTableWidgetItem()
-        font = QtGui.QFont()
-        font.setBold(True)
-        font.setWeight(75)
-        item.setFont(font)
-        item.setBackground(QtGui.QColor(255, 255, 255))
-        self.tableauListcommand.setHorizontalHeaderItem(7, item)
-        self.actualiser = QtWidgets.QPushButton(self.list_command)
-        self.actualiser.setGeometry(QtCore.QRect(190, 150, 211, 32))
-        font = QtGui.QFont()
-        font.setFamily("metropolis")
-        font.setPointSize(15)
-        font.setBold(True)
-        font.setItalic(False)
-        font.setWeight(75)
-        self.actualiser.setFont(font)
-        self.actualiser.setStyleSheet("QPushButton{\n"
-"background-color:#FFE436;\n"
-"border-top-left-radius:20px;\n"
-"border-bottom-left-radius:20px;\n"
-"color:rgb(255,255,255);\n"
-"font:77 15pt \"metropolis\";\n"
-"border-radius:5px;\n"
-"font-weight:bold;\n"
-"\n"
-"\n"
-"}\n"
-"QPushButton:hover{\n"
-"background-color:white;\n"
-"border-radius:5px;\n"
-"color:rgb(0,0,0);\n"
-"font:77 15pt \"metropolis\";\n"
-"\n"
-"font-weight:bold;\n"
-"}\n"
-"")
-        self.actualiser.setObjectName("actualiser")
-        self.search = QtWidgets.QLineEdit(self.list_command)
-        self.search.setGeometry(QtCore.QRect(720, 140, 251, 41))
-        self.search.setStyleSheet("border-radius:5px;\n"
+        self.product_field = QtWidgets.QLineEdit(self.frame_3)
+        self.product_field.setGeometry(QtCore.QRect(80, 80, 411, 41))
+        self.product_field.setStyleSheet("border-radius:15px;\n"
 "color:black;\n"
 "background-color:rgba(255,255,255,0.8)\n"
 "\n"
 "")
-        self.search.setObjectName("search")
-        self.command_stacke.addWidget(self.list_command)
-        self.widget_9 = QtWidgets.QWidget(self.widget)
-        self.widget_9.setGeometry(QtCore.QRect(-10, 0, 221, 71))
-        self.widget_9.setStyleSheet("background-color:white;\n"
-"border:none;\n"
-"border-radius:5px\n"
-"")
-        self.widget_9.setObjectName("widget_9")
-        self.label_32 = QtWidgets.QLabel(self.widget_9)
-        self.label_32.setGeometry(QtCore.QRect(110, 10, 101, 41))
-        self.label_32.setStyleSheet("border:none;\n"
-"font:90 18pt \"metropolis\";")
-        self.label_32.setObjectName("label_32")
-        self.pushButton_12 = QtWidgets.QPushButton(self.widget_9)
-        self.pushButton_12.setGeometry(QtCore.QRect(10, 0, 111, 61))
-        self.pushButton_12.setStyleSheet("QPushButton{\n"
-"background-color:none;\n"
-"border-top-left-radius:20px;\n"
-"border-bottom-left-radius:20px;\n"
-"color:rgb(0,0,0);\n"
-"font:77 10pt \"metropolis\";\n"
-"font-size:14px;\n"
-"\n"
-"}\n"
-"QPushButton:hover{\n"
-"background-color:white;\n"
-"border-top-left-radius:20px;\n"
-"border-bottom-left-radius:20px;\n"
-"color:rgb(0,0,0);\n"
-"font:77 10pt \"metropolis\";\n"
-"font-size:13px;\n"
-"\n"
-"}\n"
-"\n"
+        self.product_field.setObjectName("product_field")
+        self.categorie_combo = QtWidgets.QComboBox(self.frame_3)
+        self.categorie_combo.addItem(self.data[2])
+        for category in self.selectFiew():
+            self.categorie_combo.addItem(category)
+
+        self.categorie_combo.setGeometry(QtCore.QRect(80, 140, 411, 41))
+        self.categorie_combo.setStyleSheet("border-radius:15px;\n"
+"color:black;\n"
+"background-color:rgba(255,255,255,0.8)\n"
 "\n"
 "")
-        self.pushButton_12.setText("")
-        icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap(":/Images/images/compte-removebg-preview.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.pushButton_12.setIcon(icon2)
-        self.pushButton_12.setIconSize(QtCore.QSize(120, 110))
-        self.pushButton_12.setObjectName("pushButton_12")
+        self.categorie_combo.setObjectName("categorie_combo")
+        self.prix_field = QtWidgets.QLineEdit(self.frame_3)
+        self.prix_field.setGeometry(QtCore.QRect(80, 210, 201, 41))
+        self.prix_field.setStyleSheet("border-radius:15px;\n"
+"color:black;\n"
+"background-color:rgba(255,255,255,0.8)\n"
+"\n"
+"")
+        self.prix_field.setObjectName("prix_field")
+        self.etat_combo = QtWidgets.QComboBox(self.frame_3)
+        self.etat_combo.setGeometry(QtCore.QRect(80, 350, 411, 41))
+        self.etat_combo.addItem('Disponible')
+        self.etat_combo.addItem('Indisponible')
+        self.etat_combo.setStyleSheet("border-radius:15px;\n"
+"color:black;\n"
+"background-color:rgba(255,255,255,0.8)\n"
+"\n"
+"")
+        self.etat_combo.setObjectName("etat_combo")
 
-        self.retranslateUi(Form)
-        self.command_stacke.setCurrentIndex(1)
-        QtCore.QMetaObject.connectSlotsByName(Form)
+        self.retranslateUi(Dialog)
+        QtCore.QMetaObject.connectSlotsByName(Dialog)
 
-    def retranslateUi(self, Form):
+    def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
-        Form.setWindowTitle(_translate("Form", "Form"))
-        self.add_command.setText(_translate("Form", "Ajouer Command"))
-        self.list_command_add.setText(_translate("Form", "Liste Command"))
-        self.label.setText(_translate("Form", "Ajout Produit commander"))
-        self.categorie_combo.setItemText(0, _translate("Form", " Sucrerie"))
-        self.prix_field.setPlaceholderText(_translate("Form", "  Prix"))
-        self.product_field.setPlaceholderText(_translate("Form", "  Produit"))
-        self.quantiter_field.setPlaceholderText(_translate("Form", "  Quantité"))
-        self.add_panier.setText(_translate("Form", "Ajouter au panier"))
-        item = self.command_table.horizontalHeaderItem(0)
-        item.setText(_translate("Form", "id"))
-        item = self.command_table.horizontalHeaderItem(1)
-        item.setText(_translate("Form", "Produit"))
-        item = self.command_table.horizontalHeaderItem(2)
-        item.setText(_translate("Form", "categorie"))
-        item = self.command_table.horizontalHeaderItem(3)
-        item.setText(_translate("Form", "Prix"))
-        item = self.command_table.horizontalHeaderItem(4)
-        item.setText(_translate("Form", "Quantiter"))
-        item = self.command_table.horizontalHeaderItem(5)
-        item.setText(_translate("Form", "Montant"))
-        item = self.command_table.horizontalHeaderItem(6)
-        item.setText(_translate("Form", "Modifier"))
-        item = self.command_table.horizontalHeaderItem(7)
-        item.setText(_translate("Form", "Suprimer"))
-        self.label_2.setText(_translate("Form", "Liste Produit commander"))
-        self.valider.setText(_translate("Form", "Valider"))
-        self.list_command_list.setText(_translate("Form", "Liste Command"))
-        self.add_command_list.setText(_translate("Form", "Ajouer Command"))
-        item = self.tableauListcommand.horizontalHeaderItem(0)
-        item.setText(_translate("Form", "id"))
-        item = self.tableauListcommand.horizontalHeaderItem(1)
-        item.setText(_translate("Form", "Produit"))
-        item = self.tableauListcommand.horizontalHeaderItem(2)
-        item.setText(_translate("Form", "categorie"))
-        item = self.tableauListcommand.horizontalHeaderItem(3)
-        item.setText(_translate("Form", "Prix"))
-        item = self.tableauListcommand.horizontalHeaderItem(4)
-        item.setText(_translate("Form", "Quantiter"))
-        item = self.tableauListcommand.horizontalHeaderItem(5)
-        item.setText(_translate("Form", "Montant"))
-        item = self.tableauListcommand.horizontalHeaderItem(6)
-        item.setText(_translate("Form", "Modifier"))
-        item = self.tableauListcommand.horizontalHeaderItem(7)
-        item.setText(_translate("Form", "Suprimer"))
-        self.actualiser.setText(_translate("Form", "Actualiser"))
-        self.search.setPlaceholderText(_translate("Form", "  Search"))
-        self.label_32.setText(_translate("Form", "Connecté"))
-import ressource_rc
+        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
+        self.update.setText(_translate("Dialog", "Modifier"))
+        self.label_14.setText(_translate("Dialog", "EDITER UN PRODUIT"))
+        self.montant_field.setPlaceholderText(_translate("Dialog", "Montant"))
+        self.quantiter_field.setPlaceholderText(_translate("Dialog", "Quantité"))
+        self.product_field.setPlaceholderText(_translate("Dialog", "Product"))
+        self.categorie_combo.setPlaceholderText(_translate("Dialog", "categorie_produit"))
+        self.prix_field.setPlaceholderText(_translate("Dialog", "prix_unitaire"))
+        self.etat_combo.setPlaceholderText(_translate("Dialog", "etat"))
+
+        self.product_field.setText(_translate("Dialog", self.data[1]))
+        self.quantiter_field.setText(_translate("Dialog", self.data[3]))
+        self.prix_field.setText(_translate("Dialog", self.data[4]))
+        self.montant_field.setText(_translate("Dialog", self.data[6]))
+        self.update.clicked.connect(lambda :self.update_product({
+            'id': self.data[0],
+            'nom_produit': self.product_field.text(),
+            'categorie':self.categorie_combo.currentText(),
+            'quantiter':self.quantiter_field.text(),
+            'prix':self.prix_field.text(),
+            'etat':self.etat_combo.currentText(),
+            'montant':self.montant_field.text()
+        }))
 
 
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    Form = QtWidgets.QWidget()
-    ui = Ui_Form()
-    ui.setupUi(Form)
-    Form.show()
-    sys.exit(app.exec_())
+
+# if __name__ == "__main__":
+#     import sys
+#     app = QtWidgets.QApplication(sys.argv)
+#     Dialog = QtWidgets.QDialog()
+#     ui = Ui_Dialog_Product()
+#     ui.setupUi(Dialog)
+#     Dialog.show()
+#     sys.exit(app.exec_())

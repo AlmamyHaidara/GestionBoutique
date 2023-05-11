@@ -49,7 +49,3 @@ def generate_invoice(data):
         print("L'imprimante {} n'est pas disponible".format(printer_name))
     subprocess.run(["open", "invoice.pdf"], check=True)
     print("Finished")
-<<<<<<< HEAD
-=======
-
->>>>>>> f3f9d25 (la version avec les interface utilisateur)

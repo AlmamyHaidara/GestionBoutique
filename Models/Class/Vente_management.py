@@ -1,8 +1,5 @@
 import sys
-<<<<<<< HEAD
-=======
 from datetime import datetime
->>>>>>> f3f9d25 (la version avec les interface utilisateur)
 
 sys.path.append('../../Controler')
 from Controler.Data.Models.Vente_Model import Vente

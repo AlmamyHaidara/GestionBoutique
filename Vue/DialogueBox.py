@@ -2,6 +2,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 from Vue.Edite_user_box import Ui_Dialog
 from Vue.Edite_product_box import Ui_Dialog_Product
+from Vue.Client_form import Ui_Dialog_Client
 # from Vue.List_user import Ui_ListUser
 
 
@@ -26,3 +27,8 @@ class DialogueBox():
         self.box.setupUi(self.dialogue)
         self.dialogue.show()
         pass
+    def clientBox(self,data):
+        self.dialogue = QtWidgets.QDialog()
+        self.box = Ui_Dialog_Client(data)
+        self.box.setupUi(self.dialogue)
+        self.dialogue.show()
